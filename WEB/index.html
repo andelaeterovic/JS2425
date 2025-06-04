@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BookTube Hrvatska - Preporuke za čitanje, top liste i domaći BookTuberi.">
+  <meta name="keywords" content="BookTube, knjige, preporuke, hrvatski YouTube, čitanje, recenzije, literatura">
+  <meta name="author" content="Anđela Eterović">
+  <title>BookTube Hrvatska</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>BookTube Hrvatska</h1>
+  <h2>Svijet knjiga i recenzija na hrvatskom YouTubeu</h2>
+</header>
+
+<nav>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <ul id="nav-links">
+    <li><a href="#pocetna">Početna</a></li>
+    <li><a href="#oprojektu">O projektu</a></li>
+    <li><a href="#tablica">Preporuke</a></li>
+    <li><a href="#linkovi">BookTuberi</a></li>
+    <li><a href="#najbolje-knjige">Naj knjige</a></li>
+    <li><a href="#galerija">Galerija</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+<section id="pocetna">
+  <div class="pocetna-sadrzaj">
+    <img src="img/logo.jpeg" alt="BookTube logo" class="logo" />
+    <div class="tekst">
+      <h2>Dobrodošli na BookTube Hrvatska!</h2>
+      <p>Ovdje možeš pronaći najbolje preporuke za čitanje, top liste i otkriti najpopularnije BookTube kanale!</p>
+      <a href="#najbolje-knjige" class="btn">Istraži preporuke</a>
+    </div>
+  </div>
+</section>
+
+<section id="oprojektu">
+  <h2>O projektu</h2>
+  <p>Zovem se Anđela i obožavam knjige i YouTube. Kroz ovaj projekt želim predstaviti hrvatskoj publici svijet BookTubea i preporučiti knjige koje su se meni svidjele.</p>
+</section>
+
+<section id="tablica">
+  <h2>Primjeri knjiga i žanrova</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Knjiga</th>
+      <th>Autor</th>
+      <th>Žanr</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Little Women</td>
+      <td>Louisa May Alcott</td>
+      <td>Klasik</td>
+    </tr>
+    <tr>
+      <td>The Bell Jar</td>
+      <td>Sylvia Plath</td>
+      <td>Drama</td>
+    </tr>
+    <tr>
+      <td>The Hobbit</td>
+      <td>J.R.R. Tolkien</td>
+      <td>Fantastika</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="linkovi">
+  <h2>Linkovi na ostale stranice</h2>
+  <ol>
+    <li><a href="forma.html">Forma za preporuku</a></li>
+    <li><a href="rezultat.html">Prikaz unesenih podataka</a></li>
+  </ol>
+
+  <h3>Vanjski linkovi</h3>
+  <ul>
+    <li><a href="https://www.youtube.com/@knjigajse" target="_blank">knjigajse</a></li>
+    <li><a href="https://www.youtube.com/@knjiskirecenzeraj" target="_blank">Ella Hasel</a></li>
+    <li><a href="https://www.youtube.com/@Igor_Witch" target="_blank">Igorove Recenzije</a></li>
+  </ul>
+</section>
+
+<section id="najbolje-knjige">
+  <h2>Najbolje knjige 2025</h2>
+  <ol>
+    <li><em>Fleabag</em></li>
+    <li><em>Little Women</em></li>
+    <li><em>The Bell Jar</em></li>
+  </ol>
+</section>
+
+<section id="galerija">
+  <h2>Galerija</h2>
+  <div class="galerija-grid">
+    <img src="img/book1.jpg" alt="Knjiga 1">
+    <img src="img/book2.jpg" alt="Knjiga 2">
+    <img src="img/book3.jpg" alt="Knjiga 3">
+    <img src="img/book4.jpg" alt="Knjiga 4">
+    <img src="img/book5.jpg" alt="Knjiga 5">
+    <img src="img/book6.jpg" alt="Knjiga 6">
+  </div>
+  <p><a href="https://www.youtube.com/@knjigajse" target="_blank">Pogledaj recenziju na BookTubeu!</a></p>
+</section>
+
+<section id="kontakt">
+  <h2>Kontaktiraj me!</h2>
+  <form>
+    <label for="ime">Ime:</label>
+    <input type="text" id="ime" name="ime" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="poruka">Poruka:</label>
+    <textarea id="poruka" name="poruka" required></textarea>
+
+    <button type="submit">Pošalji</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 BookTube Hrvatska | Izradila: Anđela Eterović</p>
+  <p>
+    <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+    <a href="https://www.youtube.com" target="_blank">YT</a>
+  </p>
+</footer>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const links = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('active');
+  });
+</script>
+</body>
+</html>
+
