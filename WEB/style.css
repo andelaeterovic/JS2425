@@ -1,0 +1,263 @@
+:root {
+    --primary-color: #800020;
+    --secondary-color: #e0d4df;
+    --text-color: #222;
+    --bg-color: #f9f9f9;
+    --accent-color: #c05090;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2em 1em;
+    animation: fadeIn 1s ease-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    color: white;
+}
+
+/* Navigacija */
+nav {
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    color: white;
+    padding: 1em;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    gap: 1em;
+    transition: max-height 0.3s ease;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+.pocetna-sadrzaj {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    align-items: center;
+    justify-content: center;
+    margin: 2em auto;
+    padding: 1em;
+    max-width: 900px;
+}
+
+.logo {
+    max-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.tekst {
+    flex: 1;
+    min-width: 280px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.7em 1.2em;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1em;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    transition: background-color 0.3s ease;
+}
+
+section {
+    background-color: white;
+    margin: 2em auto;
+    padding: 2em;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ddd;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.8s ease forwards;
+}
+
+h2, h3 {
+    color: var(--primary-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+th, td {
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: var(--secondary-color);
+}
+
+#linkovi ol,
+#linkovi ul {
+    padding-left: 1.5em;
+}
+
+#linkovi a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+#linkovi a:hover {
+    color: var(--accent-color);
+}
+
+.galerija-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.galerija-grid img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.galerija-grid img:hover {
+    transform: scale(1.05);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+input, textarea {
+    padding: 0.7em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #f0c040;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    nav ul.active {
+        max-height: 500px;
+    }
+
+    .pocetna-sadrzaj {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 1em;
+    }
+}
