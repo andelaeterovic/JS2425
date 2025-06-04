@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hvala na preporuci | BookTube Hrvatska</title>
+    <link rel="stylesheet" href="rezultat.css" />
+</head>
+<body>
+
+<header>
+    <h1>Hvala ti!</h1>
+    <h2>Tvoja preporuka je zaprimljena</h2>
+</header>
+
+<section>
+    <p id="rezultat">Učitavanje preporuke...</p>
+
+    <div class="button_change">
+        <button class="btn_css_cls" id="change_css_btn" onclick="changeCSS()">Promijeni stil</button>
+    </div>
+
+    <a href="index.html" class="btn">Povratak na početnu</a>
+</section>
+
+<footer>
+    <p>© 2025 BookTube Hrvatska | Izradila: Anđela Eterović</p>
+</footer>
+
+<script>
+
+    const ime = localStorage.getItem("ime");
+    const email = localStorage.getItem("email");
+    const zanr = localStorage.getItem("zanr");
+    const hrvatski = localStorage.getItem("hrvatski");
+    const publika = localStorage.getItem("publika");
+
+    const rezultatEl = document.getElementById("rezultat");
+    rezultatEl.innerHTML = `
+    <strong>Ime:</strong> ${ime}<br>
+    <strong>Email:</strong> ${email}<br>
+    <strong>Žanr:</strong> ${zanr}<br>
+    <strong>Dostupno na hrvatskom:</strong> ${hrvatski}<br>
+    <strong>Za publiku:</strong> ${publika}
+  `;
+
+
+    function changeCSS() {
+        document.body.classList.toggle("promjena-stila");
+    }
+</script>
+
+</body>
+</html>
