@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Preporuka knjige</title>
+    <link rel="stylesheet" href="forma.css" />
+</head>
+<body>
+
+<h1>Preporuči knjigu</h1>
+
+<form id="bookForm" onsubmit="return spremiPodatke()">
+    <label for="ime">Ime i prezime:</label><br>
+    <input type="text" id="ime"><br><br>
+
+    <label for="email">E-mail adresa:</label><br>
+    <input type="email" id="email"><br><br>
+
+    <label for="zanr">Odaberi žanr:</label><br>
+    <select id="zanr">
+        <option value="">-- Odaberi --</option>
+        <option value="Fantastika">Fantastika</option>
+        <option value="Krimić">Krimić</option>
+        <option value="Drama">Drama</option>
+        <option value="Poezija">Poezija</option>
+        <option value="Klasici">Klasici</option>
+    </select><br><br>
+
+    <p>Dostupnost na hrvatskom jeziku:</p>
+    <input type="radio" name="hrvatski" value="Da"> Da
+    <input type="radio" name="hrvatski" value="Ne"> Ne<br><br>
+
+    <p>Za koga je knjiga:</p>
+    <input type="checkbox" name="publika" value="Djeca"> Djeca
+    <input type="checkbox" name="publika" value="Mladi"> Mladi
+    <input type="checkbox" name="publika" value="Odrasli"> Odrasli<br><br>
+
+    <button type="submit">Pošalji</button>
+
+    <p id="errorMsg" class="error-message"></p>
+</form>
+
+<script>
+    function spremiPodatke() {
+        const ime = document.getElementById('ime').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const zanr = document.getElementById('zanr').value;
+        const radio = document.querySelector('input[name="hrvatski"]:checked');
+        const checkboxi = document.querySelectorAll('input[name="publika"]:checked');
+        const errorMsg = document.getElementById('errorMsg');
+
+        if (ime === "" || email === "" || zanr === "" || !radio || checkboxi.length === 0) {
+            errorMsg.textContent = "Ispunite sva polja.";
+            return false;
+        }
+
+        // Počisti poruku ako je sve ispunjeno
+        errorMsg.textContent = "";
+
+        const hrvatski = radio.value;
+        const publika = Array.from(checkboxi).map(c => c.value).join(', ');
+
+        localStorage.setItem('ime', ime);
+        localStorage.setItem('email', email);
+        localStorage.setItem('zanr', zanr);
+        localStorage.setItem('hrvatski', hrvatski);
+        localStorage.setItem('publika', publika);
+
+        window.location.href = "rezultat.html";
+        return false;
+    }
+</script>
+
+</body>
+</html>
