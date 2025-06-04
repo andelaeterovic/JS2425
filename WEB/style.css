@@ -40,7 +40,6 @@ header h2 {
     color: white;
 }
 
-/* Navigacija */
 nav {
     background-color: var(--primary-color);
     position: sticky;
