@@ -255,6 +255,21 @@ footer a:hover {
         flex-direction: column;
         text-align: center;
     }
+    .izvor {
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+    margin-top: 0.3rem;
+}
+
+.izvor a {
+    color: #666;
+    text-decoration: underline;
+}
+
+.izvor a:hover {
+    color: #18bc9c;
+}
 
     .logo {
         margin-bottom: 1em;
